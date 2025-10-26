@@ -1,1 +1,48 @@
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+
+# Jupyter and Colab
+.ipynb_checkpoints/
+*.ipynb_convert/
+
+# Data folders
+data/raw/
+data/processed/
+datasets/
+*.csv
+*.xlsx
+
+# Model artifacts and logs
+models/
+logs/
+reports/
+*.pkl
+*.h5
+*.joblib
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+*.swp
+
+# DVC, MLflow, Streamlit, etc.
+.dvc/
+mlruns/
+.streamlit/
+
+# OS hidden
+*.bak
 
