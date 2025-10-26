@@ -27,4 +27,5 @@ setup(
     ],
     python_requires='>=3.8',
 )
-
+# For use 
+pip install -e 
