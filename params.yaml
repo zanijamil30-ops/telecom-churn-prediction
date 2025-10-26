@@ -1,1 +1,31 @@
+# Parameters for telecom churn prediction project
+random_state: 42
+test_size: 0.2
+
+data:
+  raw_path: data/raw/telecom_churn.csv
+  processed_path: data/processed/telecom_churn_processed.csv
+
+preprocessing:
+  drop_columns: ['CustomerID']
+  numeric_features: ['Age', 'Tenure', 'MonthlyCharges', 'TotalCharges']
+  binary_encode: ['Gender', 'TechSupport', 'StreamingTV', 'OnlineSecurity', 'PaperlessBilling']
+  one_hot_encode: ['ContractType', 'InternetService', 'PaymentMethod']
+  scaling: true
+
+models:
+  logistic_regression:
+    max_iter: 1000
+  random_forest:
+    n_estimators: 150
+    random_state: 42
+  xgboost:
+    eval_metric: logloss
+    use_label_encoder: false
+  ensemble:
+    estimators: ['RandomForest', 'GradientBoosting', 'SVM']
+    voting: 'soft'
+  stacking:
+    base_models: ['RandomForest', 'GradientBoosting', 'XGBoost']
+    meta_model: 'LogisticRegression'
 
