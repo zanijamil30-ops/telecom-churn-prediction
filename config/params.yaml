@@ -1,1 +1,46 @@
+# YAML configuration for Telecom Churn Prediction Project
+
+project:
+  author: zanjijamil30-ops
+  version: 1.0
+  description: >
+    Predict telecom customer churn using multiple ML models and ensemble stacking.
+    Dataset: telecom_churn_dataset.csv
+
+data:
+  raw_path: data/raw/telecom_churn_dataset.csv
+  processed_path: data/processed/telecom_churn_processed.csv
+  target_column: Churn
+
+preprocessing:
+  drop_columns: ['CustomerID']
+  handle_missing:
+    column: 'TotalCharges'
+    strategy: median
+  numeric_features: ['Age', 'Tenure', 'MonthlyCharges', 'TotalCharges']
+  binary_encode: ['Gender', 'TechSupport', 'StreamingTV', 'OnlineSecurity', 'PaperlessBilling']
+  one_hot_encode: ['ContractType', 'InternetService', 'PaymentMethod']
+  scale_numeric: true
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+models:
+  logistic_regression:
+    max_iter: 1000
+    penalty: l2
+  random_forest:
+    n_estimators: 150
+    random_state: 42
+  xgboost:
+    eval_metric: logloss
+    use_label_encoder: false
+    random_state: 42
+  ensemble_voting:
+    estimators: ['RandomForest', 'GradientBoosting', 'SVM']
+    voting: soft
+  stacking:
+    base_models: ['RandomForest', 'GradientBoosting', 'XGBoost']
+    meta_model: LogisticRegression
 
