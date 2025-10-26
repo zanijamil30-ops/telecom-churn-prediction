@@ -5,8 +5,8 @@ setup(
     version='1.0.0',
     author='zanjijamil30-ops',
     author_email='',
-    description='Machine Learning project for predicting telecom customer churn using ensemble and stacking models.',
-    long_description=open('README.md', encoding='utf-8').read(),
+    description='Telecom Customer Churn Prediction using ensemble ML models (Logistic Regression, Random Forest, XGBoost, Stacking).',
+    long_description=open('README.md', encoding='utf-8').read() if open else '',
     long_description_content_type='text/markdown',
     url='https://github.com/zanjijamil30-ops/telecom-churn-prediction',
     packages=find_packages(where="src"),
@@ -16,8 +16,8 @@ setup(
         'numpy',
         'scikit-learn',
         'xgboost',
-        'scipy',
         'matplotlib',
+        'scipy',
         'ipywidgets'
     ],
     classifiers=[
