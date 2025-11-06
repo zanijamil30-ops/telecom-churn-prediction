@@ -4,6 +4,7 @@ This project builds a **machine learning model to predict telecom customer churn
 It covers **data preprocessing, feature engineering, model training, hyperparameter tuning, and ensemble stacking** for improved accuracy.
 
 ---
+![sreenshot](https://github.com/user-attachments/assets/e6cbdc75-68e7-4235-903e-afc670682075)
 
 ## 🚀 Features
 - 📁 Data cleaning and preprocessing (missing values, encoding, scaling)
